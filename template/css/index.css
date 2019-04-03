@@ -10,3 +10,32 @@ body {
 .h-100vh {
     height: 100vh !important;
 }
+
+.content {
+    margin-top: 65px;
+    padding: 20px 0;
+}
+
+.dropdown-item.active {
+    background-color: #17a2b8;
+}
+
+.badge {
+    background-color: #17a2b8;
+}
+
+.page-footer a {
+    color: #17a2b8 !important;
+}
+
+.page-footer {
+    padding: 15px 0;
+}
+
+.p-card {
+    margin-bottom: 25px;
+}
+
+.navbar {
+    padding: 12px 0;
+}

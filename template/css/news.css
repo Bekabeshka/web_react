@@ -13,12 +13,7 @@
     font-weight: 200;
 }
 
-/* navbar */
-
-.content {
-    margin-top: 60px;
-    padding: 20px 0;
-}
+/* navbar */ 
 
 .card {
     margin-bottom: 25px;
@@ -37,6 +32,3 @@
 /* pagination */
 
 
-.page-footer a {
-    color: #17a2b8;
-}
