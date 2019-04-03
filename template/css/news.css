@@ -1,0 +1,42 @@
+/* navbar */
+
+.navbar-brand {
+    font-size: 1.4rem;
+}
+
+.active {
+    font-weight: 400 !important;
+    font-size: 1.1rem;
+}
+
+.navbar-nav li a {
+    font-weight: 200;
+}
+
+/* navbar */
+
+.content {
+    margin-top: 60px;
+    padding: 20px 0;
+}
+
+.card {
+    margin-bottom: 25px;
+}
+
+/* pagination */
+
+.pagination li a {
+    color: #17a2b8;
+}
+
+.pagination li a:hover {
+    color: #17a2b8;
+}
+
+/* pagination */
+
+
+.page-footer a {
+    color: #17a2b8;
+}

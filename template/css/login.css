@@ -1,0 +1,19 @@
+.login-form .input-group-prepend span {
+    width: 100px;
+}
+
+.input-group input {
+    color: #000 !important;
+}
+
+.login-form-header p {
+    margin: 0 !important;
+}
+
+.checkbox-form {
+    display: inline;
+}
+
+.form-check-label {
+    margin-left: 5px;
+}
