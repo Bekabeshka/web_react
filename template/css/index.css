@@ -38,7 +38,6 @@ body {
     padding: 12px 0;
 }
 
-
 .navbar-brand {
     font-size: 1.4rem;
 }
@@ -60,14 +59,31 @@ body {
 
 /* navbar */ 
 
-.card {
+.p-card {
     margin-bottom: 25px;
 }
 
-.card p {
+.p-card p {
     font-size: 0.96rem;
 }
 
 .close {
     font-size: 1.4rem !important;
+}
+
+.btn-link {
+    color: #17a2b8;
+}
+
+.btn-link:hover {
+    color: #17a2b8 !important;
+}
+
+.breadcrumb a {
+    color: #17a2b8 !important;
+}
+
+.s-table th {
+    font-size: 0.8rem;
+    font-weight: 400;
 }
