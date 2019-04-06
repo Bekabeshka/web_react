@@ -1,0 +1,17 @@
+.list-group strong {
+    font-size: 1.2rem;
+}
+
+.list-group {
+    font-weight: 300;
+    margin-top: 15px;
+}
+
+.list-group .bold {
+    font-size: 1.05rem;
+    font-weight: 400;
+}
+
+.p-card {
+    margin-bottom: 25px;
+}

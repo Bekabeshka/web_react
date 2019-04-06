@@ -1,0 +1,27 @@
+.navbar {
+    padding: 12px 0;
+}
+
+.navbar-brand {
+    font-size: 1.4rem;
+}
+
+.dropdown-item.active {
+    background-color: #17a2b8;
+    font-weight: 400 !important;
+    font-size: 1.1rem;
+}
+
+.navbar-nav li a {
+    font-weight: 200;
+}
+
+.dropdown-item.active span {
+    background-color: #fff;
+    color: #17a2b8;
+}
+
+.badge {
+    background-color: #17a2b8;
+    margin-left: 5px;
+}
