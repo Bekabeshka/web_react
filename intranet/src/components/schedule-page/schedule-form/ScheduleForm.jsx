@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './ScheduleForm.css';
 
 class Schedule extends Component {
   render() {

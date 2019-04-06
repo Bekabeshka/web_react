@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class Teachers extends Component {
+class TeachersForm extends Component {
   render() {
     return (
       <div className="accordion" id="accordionExample">
@@ -76,4 +76,4 @@ class Teachers extends Component {
   }
 }
 
-export default Teachers;
+export default TeachersForm;

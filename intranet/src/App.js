@@ -1,19 +1,15 @@
 import React, { Component } from 'react';
 import './App.css';
 
-import Navbar from './components/navbar/Navbar'
-import LoginForm from './components/login-form/LoginForm'
-import NewsCard from './components/news-card/NewsCard'
-import Pagination from './components/pagination/Pagination'
-import Footer from './components/footer/Footer'
-import MessageCard from './components/message-card/MessageCard'
-import PersonCard from './components/person-card/PersonCard'
-import StudentInfo from './components/student-info/StudentInfo'
-import Registrator from './components/registrator/Registrator'
-import Schedule from './components/schedule/Schedule'
-import SettingsForm from './components/settings-form/SettingsForm'
-import Breadcrumb from './components/breadcrumb/Breadcrumb'
-import Teachers from './components/teachers/Teachers'
+import Navbar from './components/navbar/Navbar';
+import LoginPage from './components/login-page/LoginPage';
+import NewsPage from './components/news-page/NewsPage';
+import MessagesPage from './components/messages-page/MessagesPage';
+import Footer from './components/footer/Footer';
+import RegistratorPage from './components/registrator-page/RegistratorPage'
+import SchedulePage from './components/schedule-page/SchedulePage'
+import TeachersPage from './components/teachers-page/TeachersPage'
+import SettingsPage from './components/settings-page/SettingsPage';
 
 class App extends Component {
   render() {
@@ -21,43 +17,16 @@ class App extends Component {
       <div className="App">
 
         <Navbar></Navbar>
-        {/*
-        <div class="login-page d-flex w-100 justify-content-center align-items-center h-100vh">
-          <LoginForm></LoginForm>
-        </div>
+        {/* 
+        <LoginPage></LoginPage>
+        <NewsPage></NewsPage>
+        <MessagesPage></MessagesPage>
+        <PersonPage></PersonPage>
+        <RegistratorPage></RegistratorPage>
+        <SchedulePage></SchedulePage>
+        <TeachersPage></TeachersPage>
+        <SettingsPage></SettingsPage>
         */}
-        <div class="container content">
-          {/*
-          <div className="news-page">
-            <NewsCard></NewsCard>
-            <NewsCard></NewsCard>
-          
-            <div class="d-flex justify-content-center">
-              <Pagination></Pagination>
-            </div>
-          </div>
-          */}
-          {/*
-          <MessageCard></MessageCard>
-          */}
-          {/* 
-          <PersonCard></PersonCard>
-          <StudentInfo></StudentInfo>
-          */}
-          {/*
-          <Registrator></Registrator>
-          */}
-          {/*
-          <Schedule></Schedule>
-          */}
-          {/* 
-          <SettingsForm></SettingsForm>
-          */}
-          {/* 
-          <Breadcrumb></Breadcrumb>
-          <Teachers></Teachers>
-          */}          
-        </div>
         <Footer></Footer>
       </div>
     );
