@@ -5,7 +5,7 @@ import StudentInfo from './student-info/StudentInfo';
 class PersonPage extends Component {
   render() {
     return (
-      <div class="container content">
+      <div className="container content">
         <PersonCard></PersonCard>
         <StudentInfo></StudentInfo>
       </div>

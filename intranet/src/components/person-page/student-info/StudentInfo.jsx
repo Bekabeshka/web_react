@@ -3,20 +3,20 @@ import React, { Component } from 'react';
 class StudentInfo extends Component {
   render() {
     return (
-      <div class="accordion" id="accordionExample">
-        <div class="card">
-          <div class="card-header" id="headingOne">
-            <h2 class="mb-0">
-              <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne">
+      <div className="accordion" id="accordionExample">
+        <div className="card">
+          <div className="card-header" id="headingOne">
+            <h2 className="mb-0">
+              <button className="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne">
                 View Currnet Attestation
               </button>
             </h2>
           </div>
       
-          <div id="collapseOne" class="collapse show">
-            <div class="card-body">
-              <table class="table table-striped">
-                <thead class="thead-dark">
+          <div id="collapseOne" className="collapse show">
+            <div className="card-body">
+              <table className="table table-striped">
+                <thead className="thead-dark">
                   <tr>
                     <th scope="col">Subject</th>
                     <th scope="col">First Attestation</th>
@@ -48,19 +48,19 @@ class StudentInfo extends Component {
             </div>
           </div>
         </div>
-        <div class="card">
-          <div class="card-header" id="headingTwo">
-            <h2 class="mb-0">
-              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo">
+        <div className="card">
+          <div className="card-header" id="headingTwo">
+            <h2 className="mb-0">
+              <button className="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo">
                 View Transcript
               </button>
             </h2>
           </div>
-          <div id="collapseTwo" class="collapse">
-            <div class="card-body">
+          <div id="collapseTwo" className="collapse">
+            <div className="card-body">
               <h5>Semester 1</h5>
-              <table class="table table-striped">
-                <thead class="thead-dark">
+              <table className="table table-striped">
+                <thead className="thead-dark">
                   <tr>
                     <th scope="col">Subject</th>
                     <th scope="col">First Attestation</th>

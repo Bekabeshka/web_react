@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
-import './Navbar.css'
+import {NavLink} from 'react-router-dom';
+import './Navbar.css';
+
+// this.props.messagesAmount
 
 export default class Navbar extends Component {
-  
-  
   render() {
     return (
       <nav className="shadow-sm navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <div className="container">
-          <a className="navbar-brand" href="#">KBTU</a>
+          <span className="navbar-brand">KBTU</span>
 
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
             <span className="navbar-toggler-icon"></span>
@@ -18,29 +19,29 @@ export default class Navbar extends Component {
             
             <ul className="navbar-nav">
               <li className="nav-item">
-                <a className="nav-link" href="#">Home</a>
+                <NavLink to="/logged/news" activeClassName="active" className="nav-link">News</NavLink>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">Teachers</a>
+                <NavLink to="/logged/faculty/teachers" activeClassName="active" className="nav-link">Teachers</NavLink>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">Registrator</a>
+                <NavLink to="/logged/registrator" activeClassName="active" className="nav-link">Registrator</NavLink>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">Schedule</a>
+                <NavLink to="/logged/schedule" activeClassName="active" className="nav-link">Schedule</NavLink>
               </li>
               <li className="nav-item dropdown">
-                <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <NavLink to="/logged/person" activeClassName="active" className="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown">
                 B.Kassymov
-                </a>
+                </NavLink>
                   <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a className="dropdown-item" href="#">Profile</a>
-                  <a className="dropdown-item" href="#">
+                  <NavLink to="/logged/person-card" activeClassName="active" className="dropdown-item">Profile</NavLink>
+                  <NavLink to="/logged/person-messages" activeClassName="active" className="dropdown-item">
                     Messages 
-                    <span className="badge badge-primary badge-pill">3</span>
-                  </a>
+                    <span className="badge badge-primary badge-pill">{this.props.messagesAmount}</span>
+                  </NavLink>
                   <div className="dropdown-divider"></div>
-                  <a className="dropdown-item" href="#">Settings</a>
+                  <NavLink to="/logged/person-settings" activeClassName="active" className="dropdown-item">Settings</NavLink>
                 </div>
               </li>
             </ul>

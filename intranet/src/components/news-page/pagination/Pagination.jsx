@@ -1,26 +1,35 @@
 import React, { Component } from 'react';
+import { NavLink } from 'react-router-dom';
 import './Pagination.css';
 
 class Pagination extends Component {
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      range: parseInt(Math.ceil(this.props.amount / 5), 10),
+      current: 1
+    }
+  }
     
   render() {
     return (
       <ul className="pagination justify-content-center">
         <li className="page-item">
-          <a className="page-link" href="#" aria-label="Previous">
-            <span aria-hidden="true">&laquo;</span>
-          </a>
+          <NavLink to="/logged" activeClassName="active" className="page-link">
+            <span>&laquo;</span>
+          </NavLink>
         </li>
-        <li className="page-item"><a className="page-link" href="#">1</a></li>
-        <li className="page-item"><a className="page-link" href="#">2</a></li>
-        <li className="page-item"><a className="page-link" href="#">3</a></li>
-        <li className="page-item"><a className="page-link" href="#">4</a></li>
-        <li className="page-item"><a className="page-link" href="#">5</a></li>
-        <li className="page-item"><a className="page-link" href="#">6</a></li>
+        {
+          [...Array(this.state.range).keys()].map((number) => 
+            <li className="page-item"><NavLink to="/logged" activeClassName="active" className="page-link">{number}</NavLink></li>
+          )
+        }
         <li className="page-item">
-          <a className="page-link" href="#" aria-label="Next">
-            <span aria-hidden="true">&raquo;</span>
-          </a>
+          <NavLink to="/logged" activeClassName="active" className="page-link">
+            <span>&raquo;</span>
+          </NavLink>
         </li>
       </ul>
     )

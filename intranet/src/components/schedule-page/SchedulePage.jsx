@@ -4,7 +4,7 @@ import ScheduleForm from './schedule-form/ScheduleForm';
 class SchedulePage extends Component {
   render() {
     return (
-      <div class="container content">
+      <div className="container content">
         <ScheduleForm></ScheduleForm>
       </div>
     );

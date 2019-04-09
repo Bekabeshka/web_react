@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { BrowserRouter, Route } from 'react-router-dom';
 import './App.css';
 
 import Navbar from './components/navbar/Navbar';
@@ -10,25 +11,25 @@ import RegistratorPage from './components/registrator-page/RegistratorPage'
 import SchedulePage from './components/schedule-page/SchedulePage'
 import TeachersPage from './components/teachers-page/TeachersPage'
 import SettingsPage from './components/settings-page/SettingsPage';
+import PersonPage from './components/person-page/PersonPage';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
+      <BrowserRouter>
 
-        <Navbar></Navbar>
-        {/* 
-        <LoginPage></LoginPage>
-        <NewsPage></NewsPage>
-        <MessagesPage></MessagesPage>
-        <PersonPage></PersonPage>
-        <RegistratorPage></RegistratorPage>
-        <SchedulePage></SchedulePage>
-        <TeachersPage></TeachersPage>
-        <SettingsPage></SettingsPage>
-        */}
-        <Footer></Footer>
-      </div>
+        <Route path='/' exact component={LoginPage}/>
+        <Route path='/logged' component={Navbar}/>
+        <Route path='/logged/news' component={NewsPage}/>
+        <Route path='/logged/faculty/teachers' component={TeachersPage}/>
+        <Route path='/logged/registrator' component={RegistratorPage}/>
+        <Route path='/logged/schedule' component={SchedulePage}/>
+        <Route path='/logged/person-card' component={PersonPage}/>
+        <Route path='/logged/person-messages' component={MessagesPage}/>
+        <Route path='/logged/person-settings' component={SettingsPage}/>
+        <Route path='/logged' component={Footer}/>
+
+      </BrowserRouter>
     );
   }
 }
