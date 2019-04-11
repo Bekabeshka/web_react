@@ -21,7 +21,7 @@ class App extends Component {
         <Route path='/' exact component={LoginPage}/>
         <Route path='/logged' component={Navbar}/>
         <Route path='/logged/news' component={NewsPage}/>
-        <Route path='/logged/faculty/teachers' component={TeachersPage}/>
+        <Route path='/logged/teachers' component={TeachersPage}/>
         <Route path='/logged/registrator' component={RegistratorPage}/>
         <Route path='/logged/schedule' component={SchedulePage}/>
         <Route path='/logged/person-card' component={PersonPage}/>

@@ -3,6 +3,9 @@ import React, { Component } from 'react';
 class Registrator extends Component {
   
   render() {
+
+    
+
     return (
       <div className="accordion" id="accordionExample">
         <div className="card">
@@ -17,26 +20,23 @@ class Registrator extends Component {
             <div className="card-body">
               
               <ul className="list-group">
-                <li className="list-group-item">
-                  <input className="align-middle" type="checkbox" ></input>
-                  <label className="ml-1">Subject 1</label> 
-                </li>
-                <li className="list-group-item">
-                  <input className="align-middle" type="checkbox" ></input>
-                  <label className="ml-1">Subject 2</label> 
-                </li>
-                <li className="list-group-item">
-                  <input className="align-middle" type="checkbox" ></input>
-                  <label className="ml-1">Subject 3</label> 
-                </li>
-                <li className="list-group-item">
-                  <input className="align-middle" type="checkbox" ></input>
-                  <label className="ml-1">Subject 4</label> 
-                </li>
-                <li className="list-group-item">
-                  <input className="align-middle" type="checkbox" ></input>
-                  <label className="ml-1">Subject 5</label> 
-                </li>
+
+                {
+                  this.props.subjectsData.map((item) => 
+                    <li className="list-group-item">
+                      <div className="d-flex justify-content-between">
+                        <div>
+                          <input className="align-middle" type="checkbox" ></input>
+                          <label className="ml-1">{item.name}</label>   
+                        </div>
+                        <div>
+                          <label className="">Credits: {item.credits}</label>
+                        </div>
+                      </div>
+                    </li>
+                  )
+                }
+                
               </ul>
 
               <button className="mt-3 btn btn-success">Submit</button>
@@ -65,24 +65,16 @@ class Registrator extends Component {
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Subject 1</td>
-                    <td>13.02.19</td>
-                    <td>14:00</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td>Subject 2</td>
-                    <td>13.02.19</td>
-                    <td>14:00</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">3</th>
-                    <td>Subject 3</td>
-                    <td>13.02.19</td>
-                    <td>14:00</td>
-                  </tr>
+                  {
+                    this.props.examsData.map((item, index) => 
+                    <tr key={item.id}>
+                      <th>{index + 1}</th>
+                      <td>{item.name}</td>
+                      <td>{item.date}</td>
+                      <td>{item.time}</td>
+                    </tr>    
+                    )
+                  }
                 </tbody>
               </table>
 

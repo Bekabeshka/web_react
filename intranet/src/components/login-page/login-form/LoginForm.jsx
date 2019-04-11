@@ -2,6 +2,22 @@ import React, { Component } from 'react';
 import './LoginForm.css'
 
 class LoginForm extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      remember: false,
+    }
+
+    this.rememberMe = this.rememberMe.bind(this);
+  }
+
+  rememberMe() {
+    this.setState((state) => ({
+      remember: !state.remember
+    }));
+  }
+
   render() {
     return (
       <div className="login-form col-md-5 col-11">
@@ -29,7 +45,7 @@ class LoginForm extends Component {
           <div className="d-flex justify-content-between align-items-center">
             
             <div className="checkbox-form">
-              <input type="checkbox" ></input>
+              <input onClick={this.rememberMe} type="checkbox" ></input>
               <label className="form-check-label">Remember me </label>
             </div>
 

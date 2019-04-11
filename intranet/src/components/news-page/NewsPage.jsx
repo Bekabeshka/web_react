@@ -9,8 +9,8 @@ class NewsPage extends Component {
     return (
       <div className="container content">
         {
-          data.map((info) => 
-            <NewsCard key={info.id} title={info.title} text={info.text} author={info.author}></NewsCard>
+          data.map((item) => 
+            <NewsCard key={item.id} item={item}></NewsCard>
           )
         }
         

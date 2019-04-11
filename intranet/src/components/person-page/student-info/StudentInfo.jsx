@@ -25,24 +25,16 @@ class StudentInfo extends Component {
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <th scope="row">Subject 1</th>
-                    <td>30</td>
-                    <td>30</td>
-                    <td>35</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">Subject 2</th>
-                    <td>30</td>
-                    <td>25</td>
-                    <td>40</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">Subject 3</th>
-                    <td>15</td>
-                    <td>15</td>
-                    <td>25</td>
-                  </tr>
+                  {
+                    this.props.attestationsData.map((item) => 
+                      <tr key={item.id}>
+                        <th>{item.name}</th>
+                        <td>{item.attestation1}</td>
+                        <td>{item.attestation2}</td>
+                        <td>{item.final}</td>
+                      </tr>
+                    )
+                  }
                 </tbody>
               </table>
             </div>
@@ -58,7 +50,38 @@ class StudentInfo extends Component {
           </div>
           <div id="collapseTwo" className="collapse">
             <div className="card-body">
-              <h5>Semester 1</h5>
+              {
+                this.props.semestersData.map((item) => 
+                <div key={item.id}>
+                  <h5>{item.name}</h5>
+
+                    <table className="table table-striped">
+                      <thead className="thead-dark">
+                        <tr>
+                          <th scope="col">Subject</th>
+                          <th scope="col">First Attestation</th>
+                          <th scope="col">Second Attestation</th>
+                          <th scope="col">Final</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+
+                        {
+                          item.attestationsData.map((data) => 
+                            <tr>
+                              <th>{data.name}</th>
+                              <td>{data.attestation1}</td>
+                              <td>{data.attestation2}</td>
+                              <td>{data.final}</td>
+                            </tr>
+                          )
+                        }
+                      </tbody>
+                    </table>
+                  </div>
+                )
+              }
+            
               <table className="table table-striped">
                 <thead className="thead-dark">
                   <tr>
@@ -69,6 +92,8 @@ class StudentInfo extends Component {
                   </tr>
                 </thead>
                 <tbody>
+
+                  
                   <tr>
                     <th scope="row">Subject 1</th>
                     <td>30</td>
