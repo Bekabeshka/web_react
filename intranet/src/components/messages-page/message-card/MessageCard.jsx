@@ -7,7 +7,7 @@ class MessageCard extends Component {
     return (
       <div className="card message-card">
         <div className="d-flex justify-content-between card-header">
-          <label className="mt-2">{this.props.info.title}</label> 
+          <label className="mt-2">{this.props.messageData.title}</label> 
           <button className="btn btn-danger btn-sm">
             delete
           </button>
@@ -15,10 +15,10 @@ class MessageCard extends Component {
         <div className="card-body">
           <blockquote className="blockquote mb-0">
             <p>
-              {this.props.info.text}
+              {this.props.messageData.text}
             </p>
             <footer className="blockquote-footer">
-              Send by <cite>{this.props.info.author}</cite>
+              Send by <cite>{this.props.messageData.author}</cite>
             </footer>
           </blockquote>
         </div>

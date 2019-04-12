@@ -33,6 +33,15 @@ class Pagination extends Component {
   }
 
   render() {
+
+    let pagginationList = getArray(this.state.range).map((number, index) => 
+      <li key={index + 1} className="page-item">
+        <NavLink to="/logged/news" activeClassName="active" className="page-link">
+          {number}
+        </NavLink>
+      </li>
+    )
+
     return (
       <ul className="pagination justify-content-center">
         <li className="page-item">
@@ -40,15 +49,9 @@ class Pagination extends Component {
             <span>&laquo;</span>
           </NavLink>
         </li>
-        {
-          getArray(this.state.range).map((number, index) => 
-            <li key={index + 1} className="page-item">
-              <NavLink to="/logged/news" activeClassName="active" className="page-link">
-                {number}
-              </NavLink>
-            </li>
-          )
-        }
+
+        { pagginationList }
+        
         <li className="page-item">
           <NavLink onClick={this.listForward} to="/logged/news" activeClassName="active" className="page-link">
             <span>&raquo;</span>

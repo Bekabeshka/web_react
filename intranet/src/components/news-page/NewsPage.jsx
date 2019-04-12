@@ -3,24 +3,22 @@ import NewsCard from './news-card/NewsCard';
 import Pagination from './pagination/Pagination';
 
 class NewsPage extends Component {
-  
-  
   render() {
+    let newsList = newsData.map((data) => 
+      <NewsCard key={data.id} data={data}></NewsCard>
+    )
+
     return (
       <div className="container content">
-        {
-          data.map((item) => 
-            <NewsCard key={item.id} item={item}></NewsCard>
-          )
-        }
+        { newsList }
         
-        <Pagination amount={data.length}></Pagination>
+        <Pagination amount={newsData.length}></Pagination>
       </div>
     );
   }
 }
 
-const data = [
+const newsData = [
   {
     id: 1,
     title: "Title 1",

@@ -3,20 +3,20 @@ import MessageCard from './message-card/MessageCard';
 
 class MessagesPage extends Component {
   render() {
+    let messagesList = messages.map((message) => 
+      <MessageCard key={message.id} messageData={message}></MessageCard>
+    )
+  
     return (
       <div className="container content">
-        {
-          data.map((item) => 
-            <MessageCard key={item.id} info={item}></MessageCard>
-          )
-        }
+        { messagesList }
 
       </div>
     );
   }
 }
 
-const data = [
+let messages = [
   {
     id: 1,
     title: "Title 1",

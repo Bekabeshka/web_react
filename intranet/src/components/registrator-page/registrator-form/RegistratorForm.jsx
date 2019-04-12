@@ -4,7 +4,28 @@ class Registrator extends Component {
   
   render() {
 
-    
+    let subjectsList = this.props.data.map((subject) => 
+      <li key={subject.id} className="list-group-item">
+        <div className="d-flex justify-content-between">
+          <div>
+            <input className="align-middle" type="checkbox" ></input>
+            <label className="ml-1">{subject.name}</label>   
+          </div>
+          <div>
+            <label className="">Credits: {subject.credits}</label>
+          </div>
+        </div>
+      </li>
+    )
+
+    let examsList = this.props.data.map((subject, index) => 
+      <tr key={subject.id}>
+        <th>{index + 1}</th>
+        <td>{subject.name}</td>
+        <td>{subject.examDate.date}</td>
+        <td>{subject.examDate.time}</td>
+      </tr>    
+    )
 
     return (
       <div className="accordion" id="accordionExample">
@@ -21,21 +42,7 @@ class Registrator extends Component {
               
               <ul className="list-group">
 
-                {
-                  this.props.subjectsData.map((item) => 
-                    <li className="list-group-item">
-                      <div className="d-flex justify-content-between">
-                        <div>
-                          <input className="align-middle" type="checkbox" ></input>
-                          <label className="ml-1">{item.name}</label>   
-                        </div>
-                        <div>
-                          <label className="">Credits: {item.credits}</label>
-                        </div>
-                      </div>
-                    </li>
-                  )
-                }
+                { subjectsList }
                 
               </ul>
 
@@ -65,16 +72,9 @@ class Registrator extends Component {
                   </tr>
                 </thead>
                 <tbody>
-                  {
-                    this.props.examsData.map((item, index) => 
-                    <tr key={item.id}>
-                      <th>{index + 1}</th>
-                      <td>{item.name}</td>
-                      <td>{item.date}</td>
-                      <td>{item.time}</td>
-                    </tr>    
-                    )
-                  }
+
+                  { examsList }
+                
                 </tbody>
               </table>
 

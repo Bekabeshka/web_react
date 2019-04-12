@@ -2,6 +2,46 @@ import React, { Component } from 'react';
 
 class StudentInfo extends Component {
   render() {
+    let currentAttestation = this.props.data[this.props.data.length - 1].attestationData
+
+    let attestationTable = currentAttestation.map((subject) =>
+      <tr key={subject.id}>
+        <th>{subject.name}</th>
+        <td>{subject.attestation1}</td>
+        <td>{subject.attestation2}</td>
+        <td>{subject.final}</td>
+      </tr>
+    )
+
+    let semesterData = this.props.data.map((semester) => 
+      <div key={semester.id}>
+        <h5>{semester.name}</h5>
+
+        <table className="table table-striped">
+          <thead className="thead-dark">
+            <tr>
+              <th scope="col">Subject</th>
+              <th scope="col">First Attestation</th>
+              <th scope="col">Second Attestation</th>
+              <th scope="col">Final</th>
+            </tr>
+          </thead>
+          <tbody>
+            {
+              semester.attestationData.map((subject) => 
+                <tr key={subject.id}>
+                  <th>{subject.name}</th>
+                  <td>{subject.attestation1}</td>
+                  <td>{subject.attestation2}</td>
+                  <td>{subject.final}</td>
+                </tr>
+              )
+            }
+          </tbody>
+        </table>
+      </div>
+    )
+
     return (
       <div className="accordion" id="accordionExample">
         <div className="card">
@@ -13,7 +53,7 @@ class StudentInfo extends Component {
             </h2>
           </div>
       
-          <div id="collapseOne" className="collapse show">
+          <div id="collapseOne" className="collapse show text-center">
             <div className="card-body">
               <table className="table table-striped">
                 <thead className="thead-dark">
@@ -25,16 +65,7 @@ class StudentInfo extends Component {
                   </tr>
                 </thead>
                 <tbody>
-                  {
-                    this.props.attestationsData.map((item) => 
-                      <tr key={item.id}>
-                        <th>{item.name}</th>
-                        <td>{item.attestation1}</td>
-                        <td>{item.attestation2}</td>
-                        <td>{item.final}</td>
-                      </tr>
-                    )
-                  }
+                  { attestationTable }
                 </tbody>
               </table>
             </div>
@@ -48,72 +79,11 @@ class StudentInfo extends Component {
               </button>
             </h2>
           </div>
-          <div id="collapseTwo" className="collapse">
+          <div id="collapseTwo" className="collapse text-center">
             <div className="card-body">
               {
-                this.props.semestersData.map((item) => 
-                <div key={item.id}>
-                  <h5>{item.name}</h5>
-
-                    <table className="table table-striped">
-                      <thead className="thead-dark">
-                        <tr>
-                          <th scope="col">Subject</th>
-                          <th scope="col">First Attestation</th>
-                          <th scope="col">Second Attestation</th>
-                          <th scope="col">Final</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-
-                        {
-                          item.attestationsData.map((data) => 
-                            <tr>
-                              <th>{data.name}</th>
-                              <td>{data.attestation1}</td>
-                              <td>{data.attestation2}</td>
-                              <td>{data.final}</td>
-                            </tr>
-                          )
-                        }
-                      </tbody>
-                    </table>
-                  </div>
-                )
+                semesterData
               }
-            
-              <table className="table table-striped">
-                <thead className="thead-dark">
-                  <tr>
-                    <th scope="col">Subject</th>
-                    <th scope="col">First Attestation</th>
-                    <th scope="col">Second Attestation</th>
-                    <th scope="col">Final</th>
-                  </tr>
-                </thead>
-                <tbody>
-
-                  
-                  <tr>
-                    <th scope="row">Subject 1</th>
-                    <td>30</td>
-                    <td>30</td>
-                    <td>35</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">Subject 2</th>
-                    <td>30</td>
-                    <td>25</td>
-                    <td>40</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">Subject 3</th>
-                    <td>15</td>
-                    <td>15</td>
-                    <td>25</td>
-                  </tr>
-                </tbody>
-              </table>
             </div>
           </div>
         </div>

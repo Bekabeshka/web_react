@@ -7,35 +7,11 @@ class PersonPage extends Component {
     return (
       <div className="container content">
         <PersonCard person={personData}></PersonCard>
-        <StudentInfo semestersData={semestersData} attestationsData={attestationsData}></StudentInfo>
+        <StudentInfo data={semestersData}></StudentInfo>
       </div>
     );
   }
 }
-
-let attestationsData = [
-  {
-    id: 1,
-    name: 'Subject 1',
-    attestation1: 30,
-    attestation2: 30,
-    final: 40
-  },
-  {
-    id: 2,
-    name: 'Subject 2',
-    attestation1: 30,
-    attestation2: 30,
-    final: 35
-  },
-  {
-    id: 3,
-    name: 'Subject 3',
-    attestation1: 20,
-    attestation2: 20,
-    final: 30
-  }
-]
 
 let personData = {
   name: 'Bekdaulet',
@@ -49,18 +25,18 @@ let personData = {
 let semestersData = [
   {
     id: 1,
-    name: 'Semester 1',
-    attestationsData: [
+    name: 'Fall semester 2016',
+    attestationData: [
       {
         id: 1,
-        name: 'Subject 1',
+        name: 'Kazakh',
         attestation1: 30,
         attestation2: 30,
         final: 40
       },
       {
         id: 2,
-        name: 'Subject 2',
+        name: 'English',
         attestation1: 30,
         attestation2: 30,
         final: 35
@@ -70,19 +46,39 @@ let semestersData = [
   },
   {
     id: 2,
-    name: 'Semester 2',
-    attestationsData: [
+    name: 'Spring semester 2017',
+    attestationData: [
       {
-        id: 1,
-        name: 'Subject 1',
+        id: 3,
+        name: 'Calculus I',
         attestation1: 30,
         attestation2: 30,
         final: 40
       },
       {
-        id: 2,
-        name: 'Subject 2',
+        id: 4,
+        name: 'Calculus II',
         attestation1: 30,
+        attestation2: 30,
+        final: 35
+      }
+    ]
+  },
+  {
+    id: 2,
+    name: 'Fall semester 2017',
+    attestationData: [
+      {
+        id: 5,
+        name: 'OOP',
+        attestation1: 20,
+        attestation2: 35,
+        final: 37
+      },
+      {
+        id: 6,
+        name: 'Algorithms',
+        attestation1: 10,
         attestation2: 30,
         final: 35
       }

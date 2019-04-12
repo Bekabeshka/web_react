@@ -7,14 +7,14 @@ class NewsCard extends Component {
     return (
       <div className="card news-card">
         <div className="card-header">
-          {this.props.item.title}
+          {this.props.data.title}
         </div>
         <div className="card-body">
           <blockquote className="blockquote mb-0">
-            <p>{this.props.item.text}</p>
+            <p>{this.props.data.text}</p>
             <footer className="blockquote-footer">
               Posted by 
-              <cite> {this.props.item.author} </cite>
+              <cite> {this.props.data.author} </cite>
             </footer>
           </blockquote>
         </div>

@@ -2,9 +2,20 @@ import React, { Component } from 'react';
 import './ScheduleForm.css';
 
 class Schedule extends Component {
+
+  converToSchedule(array) {
+    let result = [[],[]]
+    
+    return result;
+  }
+
   render() {
+
+    let dArray = converToSchedule()
+
     return (
       <div className="table-responsive-sm">
+
         <table className="s-table table table-hover text-center">
           <thead>
             <tr>
@@ -18,6 +29,8 @@ class Schedule extends Component {
             </tr>
           </thead>
           <tbody>
+
+            
             <tr>
               <th scope="row">8:00 - 9:00</th>
               <td>Mark</td>
