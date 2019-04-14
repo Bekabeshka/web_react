@@ -1,19 +1,43 @@
 import React, { Component } from 'react';
+import { Switch, Route } from 'react-router-dom';
+
 import TeacehrsForm from './teachers-form/TeachersForm';
-import Breadcrumb from './breadcrumb/Breadcrumb';
 import FacultyForm from './faculty-from/FacultyForm'
 
 class FacultyTeachersPage extends Component {
+
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      teacherName: ''
+    }
+  }
+  
   render() {
+    if (this.state.teacherName.length == 0) {
+      return (
+        <div className="container content">
+          <FacultyForm data={facultyTeachersFiles}></FacultyForm> 
+        </div>
+      );
+    } else {
+      return (
+        <div className="container content">
+          
+          <TeacehrsForm data={facultyTeachersFiles}></TeacehrsForm>
+        </div>
+      );
+    }
+
     return (
-      <div className="container content">
-        <Breadcrumb data={facultyTeachersFiles}></Breadcrumb>
-        { 
-        //  <FacultyForm data={facultyTeachersFiles}></FacultyForm> 
-        }
-        <TeacehrsForm data={facultyTeachersFiles}></TeacehrsForm>
-      </div>
-    );
+      <Switch>
+        <div className="container content">
+          <Route to='/faculties' component={FacultyForm} exact={true}/>
+          <Route to='/faculties/:name' component={TeacehrsForm}/>
+        </div>
+      </Switch>
+    )
   }
 }
 
@@ -43,7 +67,7 @@ let facultyTeachersFiles = [
       {
         id: 2,
         name: 'Mels',
-        filse: [
+        files: [
           {
             id: 4,
             name: 'File 4'
@@ -81,7 +105,7 @@ let facultyTeachersFiles = [
       {
         id: 4,
         name: 'Peter',
-        filse: [
+        files: [
           {
             id: 9,
             name: 'File 9'

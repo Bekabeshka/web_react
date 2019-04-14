@@ -7,8 +7,10 @@ class Breadcrumb extends Component {
     return (
       <nav>
         <ol className="breadcrumb">
-          <li className="breadcrumb-item"><NavLink to='/logged/news'>Main</NavLink></li>
-          <li className="breadcrumb-item active">{this.props.teachersData}</li>
+          <li className="breadcrumb-item"><NavLink to='/logged/news'>{this.props.data.name}</NavLink></li>
+          {
+            //<li className="breadcrumb-item active">{this.props.teachersData}</li>
+          }
         </ol>
       </nav>
     );
